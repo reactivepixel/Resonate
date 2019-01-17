@@ -29,11 +29,11 @@ app.use(morgan('combined'))
 server.applyMiddleware({ app });
 
 // Open public folder for direct access
-app.use(express.static("build/public"));
+app.use(express.static("build"));
 
 // Home route to allow for Client-side routing
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../', 'build', 'public', 'gql-index.html'));
+  res.sendFile(path.join(__dirname, '../', 'build', 'gql-index.html'));
 });
 
 // Verify that Sequelize models are configured as expected

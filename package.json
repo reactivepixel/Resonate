@@ -10,11 +10,12 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "graphql": "^14.1.1",
-    "graphql-tag": "^2.10.0",
+    "graphql-tag": "^2.10.1",
     "luxon": "^1.10.0",
     "morgan": "^1.9.1",
     "mysql2": "^1.6.4",
     "react": "^16.7.0",
+    "react-apollo": "^2.3.3",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3",
     "sequelize": "^4.42.0"
@@ -27,8 +28,8 @@
     "dev": "nf start -j Procfile.dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate-local-clean": "./db/scripts/migrate_local.sh",
-    "build": "webpack --entry ./build/public/js/index.js --output-filename bundle.min.js --output-path ./build/public/js ",
-    "start": "nodemon --exec babel-node ./src/server.js"
+    "build": "webpack --entry ./public/js/index.js --output-filename bundle.min.js --output-path ./public/js ",
+    "start": "npm run client-build && nodemon --exec babel-node ./src/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
