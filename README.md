@@ -1,68 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Resonate
 
-## Available Scripts
+Resource coordination tool for communicating with and booking talent on demand and ahead of time for events.
 
-In the project directory, you can run:
+Resonate allows for mass communication with Contractors, you have a previous working relationship, to coordinate the staffing needs for upcoming and active events. An event coordinator will be able to reach out to all contractors that can fill the variable roles needed for an event, automating the tentative, confirmation, and booking process of the contractors. 
 
-### `npm start`
+The overall goal of this product is to reduce the man hours associated with contacting and coordinating with event contractors with an initial focus on events of a musical nature.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Feature Groups
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* User Hierarchy
+  * Super Admin
+    * Org
+      * Owner
+      * Org Manager
+        * Event Coordinator
+          * Contractor
 
-### `npm test`
+* Notifications
+  * Communications Can be Txt or Email
+    * Has Opt-in Confirmation
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Contractor Actions (Talent / Labor)
+  * Confirmation State
+    * Tentative
+    * Confirmed
+    * Need to get back to you
+    * Active (there now)
+  * Full communication history with Manager viewable organized by Event
 
-### `npm run build`
+* Event Management
+  * CRUD Events
+    * Link to map / address
+    * Base Details
+      * Description
+      * Start Time
+      * Expected Duration
+      * Roles needed x qty
+        * Start Time Offset
+        * Expected Duration
+        * Allow for Grouping of roles (front of house, back of house, talent)
+    * Rental/Equipment Needs?
+    * Special Access Badge considerations?
+  * Booking
+    * Manual
+    * Auto
+      * Timeout rolling invites to the booking event
+  * Communication
+    * Can message [event(s)] contractors of a certain [confirmation state]
+      * Request Confirmation from Contractors
+    * Communication history with each contractor
+    * Auto Updates to Attached Contractors based upon event status updates
+      * Cancelled
+      * Time/Day Change
+      * Status Changes
+  * Add Contractor
+    * Send Confirmation
+        * Home Timezone
+        * Do Not Disturb hours
+    * Set Hourly Pay Scale 
+    * Tag as Role (Base guitarist, Violinist, roadie, lighting tech, sound tech)
+      * Prioritization/Skill by Role
+  * Pay Management
+    * Transactions Management of:
+      * Contractor
+      * Event
+  * Event Statuses
+    * Dynamic Status [Tentative, Confirmed]
+      * Settable to trigger notifications.
+  * Event Live Actions
+    * Confirm start of gig
+    * Confirm end of gig for all
+      * Manual end of gig for specific talent or group (roadies go home)
+    * Emergency Auto book
+      * War dial Rolodex for missing talent
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Calendar
+  * List of Events
+  * Exportable to .ical file
+  * Subscribable?
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Custom API for data CRUD from the back end micro-service.
+* Twilio will be employed to send SMS messages.
+* Nodemailer, while not an API, will be employed server-side to send emails to users.
