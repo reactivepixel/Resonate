@@ -18,6 +18,10 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faInfo } from '@fortawesome/pro-solid-svg-icons'
 import { faCheckSquare, faComments } from '@fortawesome/pro-regular-svg-icons'
@@ -50,10 +54,17 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends Component {
-  state = { expanded: false };
+    state = { 
+        expanded: false,
+        value: 0,
+    };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
+  };
+  
+  handleTabChange = (event, value) => {
+    this.setState({ value });
   };
 
   render() {
@@ -84,19 +95,21 @@ class RecipeReviewCard extends Component {
         />
         
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-        <CardActions className={classes.actions} disableActionSpacing>
-            <Typography component="p">
-                <IconButton aria-label="Share">
-                    <FontAwesomeIcon icon={faCheckSquare} />
-                </IconButton>
-                
-                <IconButton aria-label="Share">
-                    <FontAwesomeIcon icon={faComments} />
-                </IconButton>
-            </Typography>
-          
-        </CardActions>
+            
+            
+
           <CardContent>
+            <Tabs
+                value={this.state.value}
+                indicatorColor="primary"
+                textColor="primary"
+                onChange={this.handleTabChange}
+                >
+                    <Tab label="Details" active />
+                    <Tab label="My Confirmation" />
+                </Tabs>
+            </CardContent>
+            <CardContent>
             <Typography component="p">
               {this.props.event.description}
             </Typography>
