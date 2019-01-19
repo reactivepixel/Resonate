@@ -2,6 +2,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 import React, { Component } from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import MenuDrawer from './components/MenuDrawer'
 
 // import logo from './logo.svg';
@@ -15,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
+        <CssBaseline />
         <div>
           <MenuDrawer />
         </div>

@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography'
 
 import CardHeader from '@material-ui/core/CardHeader';
 
-const Event = (props) => {
+const EventConfirm = (props) => {
     return (
         <div>
             { props.event ? (
@@ -92,4 +92,4 @@ const Event = (props) => {
         </div>
     )
 }
-export default Event
+export default EventConfirm

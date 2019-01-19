@@ -3,6 +3,7 @@
 .env
 .DS_Store
 .vscode
+.npmrc
 
 # dependencies
 /node_modules

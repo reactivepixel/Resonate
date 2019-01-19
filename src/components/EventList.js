@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
-import Event from '../components/Event';
+import EventConfirm from '../components/EventConfirm';
+import EventCondensed from '../components/EventCondensed';
 
 import { getEvents } from '../graphQL/queries.js';
 
@@ -50,7 +51,8 @@ class EventList extends Component {
                                 style={{padding: 24}}>
                                 { data.events.map(event => (
                                     <Grid key={event.id} item xs={12} sm={6} lg={4} xl={3}>
-                                        <Event event={event} />
+                                        <EventCondensed event={event} />
+                                        {/* <EventConfirm event={event} /> */}
                                     </Grid>
                                 ))}
                             </Grid>

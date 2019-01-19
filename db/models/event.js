@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Events.associate = function(models) {
     // associations can be defined here
-    // Events.belongsTo(modrsels.Venue)
     Events.hasOne(models.Venues, {
       as: 'venue',
       foreignKey: 'id',
