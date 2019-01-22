@@ -1,1 +1,2 @@
-web: supervisor src/server.js
+client: npm run client-build && npm run client-start
+server: npm run server-build && npm run server-start

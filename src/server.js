@@ -11,7 +11,7 @@ import db from "../db/models";
 
 import morgan from "morgan";
 
-const port = process.env.PORT || 4000;
+const port = process.env.REACT_APP_DB_PORT || 4000;
 
 const server = new ApolloServer({
   typeDefs: gql(typeDefs),
