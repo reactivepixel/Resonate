@@ -26,7 +26,7 @@ npm install
 Install Globals
 
 ```
-npm i -g nodemon foreman
+npm i -g nodemon foreman sequelize-cli
 ```
 
 ## `.env` File
