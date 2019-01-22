@@ -9,8 +9,9 @@ import MenuDrawer from './components/MenuDrawer'
 // import logo from './logo.svg';
 import './App.css';
 
-console.log(process.env);
-
+if (process.env.REACT_APP_PROTOCOL === undefined) {
+  throw Error('Environmental Variables not loading into client.'); 
+} 
 
 const client = new ApolloClient({
   uri: `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_CLIENT_HOST}:${process.env.REACT_APP_DB_PORT}/graphql`,

@@ -6,6 +6,59 @@ Resonate allows for mass communication with Contractors, you have a previous wor
 
 The overall goal of this product is to reduce the man hours associated with contacting and coordinating with event contractors with an initial focus on events of a musical nature.
 
+# Local Development Environment
+
+## Prerequisites
+
+* MySQL Installed and running ([see installation guide](https://mariadb.com/kb/en/library/installing-mariadb-on-macos-using-homebrew/))
+* Configure `.env` file (obtain skeleton from Owner of repo)
+
+## Install
+
+Clone from Repo and Access latest Code (Note: Dev is the default branch, Master is what has been released)
+
+```
+git@github.com:reactivepixel/Resonate.git
+cd Resonate
+npm install
+```
+
+Install Globals
+
+```
+npm i -g nodemon foreman
+```
+
+## `.env` File
+
+Create a `.env` file on the root level of the repo and configure that file with the following structure and your own information
+
+```json
+{
+    "TWILIO_ACCOUNT_SID": "",
+    "TWILIO_AUTH_TOKEN": "",
+    "TWILIO_FROM_NUMBER": "",
+    "TWILIO_OWNER_NUMBER": "",
+    "DB_LOCAL_DATABASE": "resonate-dev",
+    "DB_LOCAL_USER": "",
+    "DB_LOCAL_PASSWORD": "",
+    "DB_LOCAL_HOST": "localhost",
+    "DB_LOCAL_PORT": "3306",
+    "NODE_ENV": "development",
+    "REACT_APP_PROTOCOL": "http",
+    "REACT_APP_CLIENT_HOST": "localhost",
+    "REACT_APP_DB_PORT": 3000,
+    "CLIENT_PORT": 3100
+}
+```
+
+## Run
+
+```
+npm run
+```
+
+
 # Feature Groups
 
 * User Hierarchy

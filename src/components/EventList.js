@@ -37,7 +37,6 @@ class EventList extends Component {
                     if (loading) return null;
                     if (error) return <p>Error =( 
                         <button onClick={() => refetch()}>Refetch Data!</button></p>
-                    
                     return (
                         <div>
                             <TextField 

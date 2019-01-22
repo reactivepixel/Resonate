@@ -22,9 +22,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faInfo } from '@fortawesome/pro-solid-svg-icons'
-import { faCheckSquare, faComments } from '@fortawesome/pro-regular-svg-icons'
+// import { faCheckSquare, faComments } from '@fortawesome/pro-regular-svg-icons'
 // import { faInfoCircle } from '@fortawesome/pro-light-svg-icons'
 
 const styles = theme => ({
