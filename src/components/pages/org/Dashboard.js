@@ -13,7 +13,7 @@ class Dashboard extends Component {
     const { classes } = this.props;
     return (
         <Query query={getOrg} notifyOnNetworkStatusChange>
-            {({ loading, error, org, refetch, networkStatus}) => {
+            {({ loading, error, data, refetch, networkStatus}) => {
                 if (networkStatus === 4) return <p>Refetching!</p>
                 if (loading) return null;
                 if (error) return <p>Error =( 
@@ -33,6 +33,11 @@ class Dashboard extends Component {
                             <Typography variant="h6" color="textSecondary" noWrap>
                                     Contractors
                             </Typography>
+                            { data.org.contractors.map(contractor => (
+                                    <Typography variant="p" color="textPrimary" noWrap>
+                                        {contractor.fullName}
+                                    </Typography>
+                                ))}
                             {/* <ContractorList /> */}
                         </main>
                     </div>
