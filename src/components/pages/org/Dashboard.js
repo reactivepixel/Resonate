@@ -4,8 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import EventList from '../../../components/organisms/EventList';
 import CollapsingNavBar from '../../../components/molecules/nav/CollapsingNavBar';
 import styles from '../../../components/atoms/style/index';
+import Typography from '@material-ui/core/Typography';
 
-class Events extends Component {
+class Dashboard extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -15,6 +16,9 @@ class Events extends Component {
             <main className={classes.content}>
                 {/* Spacer for navBar */}
                 <div className={classes.toolbar} />
+                <Typography variant="h6" color="textSecondary" noWrap>
+                        Upcoming Events
+                </Typography>
                 <EventList />
             </main>
         </div>
@@ -22,4 +26,4 @@ class Events extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Events);
+export default withStyles(styles, { withTheme: true })(Dashboard);

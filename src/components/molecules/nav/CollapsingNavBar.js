@@ -18,7 +18,7 @@ class CollapsingNavBar extends Component {
     state = {
         mobileOpen: false,
         primaryMenuLinks: [
-            { title: 'Organization', href: '/org', icon:'mail' },
+            { title: 'Dashboard', href: '/org/dashboard', icon:'mail' },
             { title: 'Events', href: '/events', icon:'mail' },
             { title: 'Staff', href: '/staff', icon:'mail' },
             { title: 'Contractors', href: '/contractors', icon:'mail' }
@@ -62,8 +62,8 @@ class CollapsingNavBar extends Component {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        {this.props.h1Title}
+                    <Typography variant="h5" color="textPrimary" noWrap>
+                        {this.props.title}
                     </Typography>
                     </Toolbar>
                 </AppBar>

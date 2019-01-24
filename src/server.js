@@ -5,8 +5,10 @@ import typeDefs from "./graphQL/schema";
 import resolvers from "./graphQL/resolvers";
 import db from "../db/models";
 
-// db.Events.findAll({include: [{ all: true, nested: true }]}).then(data => {
-//   console.log('======', data[0].venue.dataValues )
+// DB Manual Testing String
+// db.Orgs.findAll({where: {id: 1}, include: [{ all: true, nested: true }]}).then(data => {
+//   console.log('====', data[0].contractors.fullName);
+  
 // })
 
 import morgan from "morgan";

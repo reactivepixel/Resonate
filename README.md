@@ -26,7 +26,7 @@ npm install
 Install Globals
 
 ```
-npm i -g nodemon foreman sequelize-cli
+npm i -g nodemon foreman sequelize-cli mysql2
 ```
 
 ## `.env` File

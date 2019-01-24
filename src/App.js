@@ -7,9 +7,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import Events from './components/pages/org/Events';
 import styles from './components/atoms/style/index';
+import theme from './components/atoms/style/theme';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 // import logo from './logo.svg';
 import "./App.css";
+import Dashboard from "./components/pages/org/Dashboard";
 
 if (process.env.REACT_APP_PROTOCOL === undefined) {
   throw Error("Environmental Variables not loading into client.");
@@ -41,10 +44,12 @@ class App extends Component {
     return (
       <Router>
         <ApolloProvider client={client}>
-          <Switch>
-            <PropsRoute path="/events" h1Title="Events" exact component={Events} />
-            <PropsRoute path="/org" h1Title="Organization" component={Events} />
-          </Switch>
+          <MuiThemeProvider theme={theme}>
+            <Switch>
+              <PropsRoute path="/" title="Events" exact component={Events} />
+              <PropsRoute path="/org/dashboard" title="[Company Name] Dashboard" component={Dashboard} />
+            </Switch>
+          </MuiThemeProvider>
         </ApolloProvider>
       </Router>
     );

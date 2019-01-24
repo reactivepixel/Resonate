@@ -12,8 +12,36 @@ export default `
     timezone: String!
     events: [Event!]!
   }
+  type Org {
+    id: ID!
+    name: String!
+    contractors: [Contractor]
+  }
+  type Contractor {
+    id: ID!
+    fullName: String!
+    fName: String
+    lName: String
+    countryCode: Int
+    phone: String
+    email: String
+    address1: String
+    address2: String
+    zip: String
+    city: String
+    state: String
+    contactPrefId: Int
+    smsConsent: String
+    emailConsent: String
+    currentTimeZone: String
+    created_at: String
+    updated_at: String
+  }
   type Query {
     venues: [Venue!]!
+    orgs: [Org!]!
+    org(id: ID!): Org!
+    contractors: [Contractor!]!
     venue(id: ID!): Venue
     event(id: ID!): Event
     events: [Event!]!
