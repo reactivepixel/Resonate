@@ -3,10 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Orgs.associate = (models) => {
-    Orgs.belongsTo(models.Contractors, {
+    Orgs.belongsToMany(models.Contractors, {
       as: 'contractors',
-      foreignKey: 'id',
-      otherKey: 'id',
+      foreignKey: 'orgId',
+      otherKey: 'contractorId',
       through: 'OrgContractors'
     })
   };

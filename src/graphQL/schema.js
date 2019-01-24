@@ -13,9 +13,9 @@ export default `
     events: [Event!]!
   }
   type Org {
-    id: ID!
+    id: Int!
     name: String!
-    contractors: [Contractor]
+    contractors: [Contractor!]!
   }
   type Contractor {
     id: ID!
@@ -40,7 +40,7 @@ export default `
   type Query {
     venues: [Venue!]!
     orgs: [Org!]!
-    org(id: ID!): Org!
+    org(id: Int!): Org!
     contractors: [Contractor!]!
     venue(id: ID!): Venue
     event(id: ID!): Event
