@@ -5,23 +5,40 @@ import EventList from '../../../components/organisms/EventList';
 import CollapsingNavBar from '../../../components/molecules/nav/CollapsingNavBar';
 import styles from '../../../components/atoms/style/index';
 import Typography from '@material-ui/core/Typography';
+import { Query } from "react-apollo";
+import { getOrg } from '../../../graphQL/queries';
 
 class Dashboard extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <CollapsingNavBar title={this.props.title} />
-            <main className={classes.content}>
-                {/* Spacer for navBar */}
-                <div className={classes.toolbar} />
-                <Typography variant="h6" color="textSecondary" noWrap>
-                        Upcoming Events
-                </Typography>
-                <EventList />
-            </main>
-        </div>
+        <Query query={getOrg} notifyOnNetworkStatusChange>
+            {({ loading, error, org, refetch, networkStatus}) => {
+                if (networkStatus === 4) return <p>Refetching!</p>
+                if (loading) return null;
+                if (error) return <p>Error =( 
+                    <button onClick={() => refetch()}>Refetch Data!</button></p>
+                return (
+                    <div className={classes.root}>
+                        <CssBaseline />
+                        <CollapsingNavBar title={this.props.title} />
+                        <main className={classes.content}>
+                            {/* Spacer for navBar */}
+                            <div className={classes.toolbar} />
+                            <Typography variant="h6" color="textSecondary" noWrap>
+                                    Upcoming Events
+                            </Typography>
+                            <EventList />
+
+                            <Typography variant="h6" color="textSecondary" noWrap>
+                                    Contractors
+                            </Typography>
+                            {/* <ContractorList /> */}
+                        </main>
+                    </div>
+                )
+            }}
+        </Query>
     );
   }
 }

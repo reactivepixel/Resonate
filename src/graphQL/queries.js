@@ -22,7 +22,7 @@ export const getOrgs = gql`
 
 export const getOrg = gql`
     {
-        org {
+        org (id: 1) {
             id
             name
             contractors {
