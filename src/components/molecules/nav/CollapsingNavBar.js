@@ -10,24 +10,24 @@ import { withStyles } from '@material-ui/core/styles';
 
 
 import Divider from '@material-ui/core/Divider';
-import SideMenu from '../../components/list/SideMenu';
+import SideMenu from '../../../components/atoms/list/SideMenu';
 
-import styles from '../../components/style/index';
+import styles from '../../../components/atoms/style/index';
   
 class CollapsingNavBar extends Component {
     state = {
         mobileOpen: false,
         primaryMenuLinks: [
-            { title: 'Organization', href: '/org/', icon:'mail' },
-            { title: 'Events', href: '/events/', icon:'mail' },
-            { title: 'Staff', href: '/staff/', icon:'mail' },
-            { title: 'Contractors', href: '/contractors/', icon:'mail' }
+            { title: 'Organization', href: '/org', icon:'mail' },
+            { title: 'Events', href: '/events', icon:'mail' },
+            { title: 'Staff', href: '/staff', icon:'mail' },
+            { title: 'Contractors', href: '/contractors', icon:'mail' }
           ],
     
         secondaryMenuLinks: [
             { title: 'Notifications', href: 'yy', icon:'mail' },
             { title: 'Settings', href: 'yy', icon:'mail' },
-            { title: 'Logout', href: 'yy', icon:'mail' }
+            { title: 'Logout', href: '/', icon:'mail' }
           ],
     }
     
@@ -38,6 +38,7 @@ class CollapsingNavBar extends Component {
     render(){
         const { classes, theme } = this.props;
         
+        
         const drawer = (
             <div>
               <div className={classes.toolbar} />
@@ -45,6 +46,7 @@ class CollapsingNavBar extends Component {
               <SideMenu list={this.state.primaryMenuLinks} />
               <Divider />
               <SideMenu list={this.state.secondaryMenuLinks} />
+
             </div>
         );
 
@@ -61,7 +63,7 @@ class CollapsingNavBar extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" color="inherit" noWrap>
-                        Responsive drawer
+                        {this.props.h1Title}
                     </Typography>
                     </Toolbar>
                 </AppBar>

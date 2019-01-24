@@ -13,8 +13,8 @@ class SideMenu extends Component {
             <List>
                 {this.props.list.map((listItem, index) => (
                 
-                    <Link to={listItem.href}>
-                        <ListItem button key={listItem.title}>
+                    <Link key={listItem.title} to={listItem.href}>
+                        <ListItem button>
                             <ListItemIcon><MailIcon /></ListItemIcon>
                             <ListItemText primary={listItem.title} />
                         </ListItem>

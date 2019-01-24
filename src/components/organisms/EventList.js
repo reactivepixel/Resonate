@@ -1,20 +1,9 @@
 import React, {Component} from 'react';
-
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-
-import EventConfirm from '../components/EventConfirm';
-import EventCondensed from '../components/EventCondensed';
-
-import { getEvents } from '../graphQL/queries.js';
-
+import EventCondensed from '../../components/EventCondensed';
+import { getEvents } from '../../graphQL/queries.js';
 import { Query } from "react-apollo";
-
-const ORG_ID = '';
-const ACCESS_TOKEN = '';
-
-
-
 
 class EventList extends Component {
     state = {
@@ -22,11 +11,8 @@ class EventList extends Component {
         searchString: ''
     }
 
-    constructor() {
-        super()
-    }
-
     render() {
+
         return (
             <Query 
                 query={getEvents}

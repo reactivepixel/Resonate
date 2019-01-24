@@ -2,14 +2,11 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { withStyles } from '@material-ui/core/styles';
-import EventList from './components/EventList'
-import CollapsingNavBar from './components/nav/CollapsingNavBar';
-import styles from './components/style/index';
-
+import Events from './components/pages/org/Events';
+import styles from './components/atoms/style/index';
 
 // import logo from './logo.svg';
 import "./App.css";
@@ -24,34 +21,30 @@ const client = new ApolloClient({
   }:${process.env.REACT_APP_DB_PORT}/graphql`
 });
 
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
-
 class App extends Component {
   render() {
-    const { classes, theme } = this.props;
+    const renderMergedProps = (component, ...rest) => {
+      const finalProps = Object.assign({}, ...rest);
+      return (
+        React.createElement(component, finalProps)
+      );
+    }
+    
+    const PropsRoute = ({ component, ...rest }) => {
+      return (
+        <Route {...rest} render={routeProps => {
+          return renderMergedProps(component, routeProps, rest);
+        }}/>
+      );
+    }    
 
     return (
       <Router>
         <ApolloProvider client={client}>
-          <div className={classes.root}>
-            <CssBaseline />
-            <CollapsingNavBar />
-            <main className={classes.content}>
-              
-              {/* Spacer for navBar */}
-              <div className={classes.toolbar} />
-              
-                
-                <Link to="/users/">Users</Link>
-                
-                <Route path="/" exact component={EventList} />
-                <Route path="/about/" component={About} />
-
-              
-            </main>
-          </div>
+          <Switch>
+            <PropsRoute path="/events" h1Title="Events" exact component={Events} />
+            <PropsRoute path="/org" h1Title="Organization" component={Events} />
+          </Switch>
         </ApolloProvider>
       </Router>
     );
