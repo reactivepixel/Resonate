@@ -6,14 +6,14 @@ import CollapsingNavBar from '../../../components/molecules/nav/CollapsingNavBar
 import styles from '../../../components/atoms/style/index';
 import Typography from '@material-ui/core/Typography';
 import { Query } from "react-apollo";
-import { getOrg } from '../../../graphQL/queries';
+import { getOrgById } from '../../../graphQL/queries';
 
 class Dashboard extends Component {
   render() {
     const { classes } = this.props;
     
     return (
-        <Query query={getOrg} notifyOnNetworkStatusChange>
+        <Query query={getOrgById(3)} notifyOnNetworkStatusChange>
             {({ loading, error, data, refetch, networkStatus}) => {
                 if (networkStatus === 4) return <p>Refetching!</p>
                 if (loading) return null;

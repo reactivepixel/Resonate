@@ -20,9 +20,10 @@ export const getOrgs = gql`
         }
     }`;
 
-export const getOrg = gql`
+export const getOrgById = (orgId) => {
+    return gql`
     {
-        org (id: 1) {
+        org (id: ${orgId}) {
             id
             name
             contractors {
@@ -31,6 +32,7 @@ export const getOrg = gql`
             }
         }
     }`;
+} 
 
 export const getContractors = gql`
 {
