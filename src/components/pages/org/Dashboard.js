@@ -11,6 +11,7 @@ import { getOrg } from '../../../graphQL/queries';
 class Dashboard extends Component {
   render() {
     const { classes } = this.props;
+    
     return (
         <Query query={getOrg} notifyOnNetworkStatusChange>
             {({ loading, error, data, refetch, networkStatus}) => {
