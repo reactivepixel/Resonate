@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 // import TextField from '@material-ui/core/TextField';
 import EventCondensed from '../../components/EventCondensed';
-import { getEvents } from '../../graphQL/queries.js';
+import { getEventsByOrgId } from '../../graphQL/queries.js';
 import { Query } from "react-apollo";
 
 class EventList extends Component {
@@ -15,7 +15,7 @@ class EventList extends Component {
 
         return (
             <Query 
-                query={getEvents}
+                query={getEventsByOrgId(1)}
                 notifyOnNetworkStatusChange
             >
                 {({ loading, error, data, refetch, networkStatus}) => {
@@ -34,7 +34,9 @@ class EventList extends Component {
                                 container 
                                 spacing={24}
                                 style={{padding: 24}}>
-                                { data.events.map(event => (
+                                {/* {console.log(data)} */}
+                                
+                                { data.orgEvents.map(event => (
                                     <Grid key={event.id} item xs={12} sm={6} lg={4} xl={3}>
                                         <EventCondensed event={event} />
                                         {/* <EventConfirm event={event} /> */}

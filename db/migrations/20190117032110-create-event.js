@@ -22,6 +22,9 @@ module.exports = {
       venueId: {
         type: Sequelize.INTEGER
       },
+      orgId: {
+        type: Sequelize.INTEGER
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

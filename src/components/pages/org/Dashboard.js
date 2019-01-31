@@ -11,9 +11,11 @@ import { getOrgById } from '../../../graphQL/queries';
 class Dashboard extends Component {
   render() {
     const { classes } = this.props;
+
+    const mockAuthedOrg = {id: 1};
     
     return (
-        <Query query={getOrgById(3)} notifyOnNetworkStatusChange>
+        <Query query={getOrgById(mockAuthedOrg.id)} notifyOnNetworkStatusChange>
             {({ loading, error, data, refetch, networkStatus}) => {
                 if (networkStatus === 4) return <p>Refetching!</p>
                 if (loading) return null;
@@ -29,7 +31,7 @@ class Dashboard extends Component {
                             <Typography variant="h6" color="textSecondary" noWrap>
                                     Upcoming Events
                             </Typography>
-                            <EventList />
+                            <EventList org={data.org} />
 
                             <Typography variant="h6" color="textSecondary" noWrap>
                                     Contractors

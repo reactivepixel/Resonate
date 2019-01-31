@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
   Venues.associate = function(models) {
     // associations can be defined here
     
-    // Venues.hasMany(models.Events, {
-    //   as: 'events',
-    //   foreignKey: 'venueId',
-    // })
+    Venues.hasMany(models.Events, {
+      as: 'events',
+      foreignKey: 'venueId',
+    })
   };
   return Venues;
 };

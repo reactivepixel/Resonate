@@ -6,9 +6,13 @@ import resolvers from "./graphQL/resolvers";
 import db from "../db/models";
 
 // DB Manual Testing String
-// db.Orgs.findByPk(1, {include: [{ all: true, nested: true }]}).then(data => {
-//   console.log('====', data.contractors.length);
+// db.Events.findAll({where: {}, include: [{ all: true, nested: true }]}).then(data => {
+//   data.map( event => {
+//     console.log('----', `(${event.id})`, event.venueId, event.venue.id, event.venue.events.length);
+    
+//   })
 // })
+
 
 import morgan from "morgan";
 

@@ -59,6 +59,456 @@ module.exports = {
             created_at: new Date(),
             updated_at: new Date() 
         },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
+        { 
+            name: faker.company.companyName(),
+            created_at: new Date(),
+            updated_at: new Date() 
+        },
     ], {});
   },
 

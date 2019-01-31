@@ -4,18 +4,19 @@ export default `
     title: String!
     description: String
     venueId: ID!
+    orgId: ID!
     venue: Venue!
   }
   type Venue {
     id: ID!
     name: String!
-    timezone: String!
     events: [Event!]!
   }
   type Org {
     id: Int!
     name: String!
     contractors: [Contractor!]!
+    events: [Event!]!
   }
   type Contractor {
     id: ID!
@@ -45,6 +46,9 @@ export default `
     venue(id: ID!): Venue
     event(id: ID!): Event
     events: [Event!]!
+    orgEvents(orgId: Int!): [Event!]!
+    venueEvents(venueId: Int!): [Event!]!
+
   }
   type Mutation {
     createEvent(title: String, description:String!, venueId: ID!): Event!
