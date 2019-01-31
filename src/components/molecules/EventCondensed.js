@@ -5,18 +5,14 @@ import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faInfo } from '@fortawesome/pro-solid-svg-icons'
@@ -91,30 +87,16 @@ class RecipeReviewCard extends Component {
         />
         
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-            
-            
-
           <CardContent>
-            <Tabs
-                value={this.state.value}
-                indicatorColor="primary"
-                textColor="primary"
-                onChange={this.handleTabChange}
-                >
-                    <Tab label="Details" active />
-                    <Tab label="My Confirmation" />
-                </Tabs>
-            </CardContent>
-            <CardContent>
             <Typography component="p">
               {this.props.event.description}
             </Typography>
-            
           </CardContent>
-          <CardMedia
-                        style={{height: 0, paddingTop: '56.25%'}}
-                        image="https://picsum.photos/200/300?random"
-                        title={this.props.event.title} />
+          <CardContent>
+            <Button variant="contained" color="secondary" className={classes.button}>
+              Cancel Event
+            </Button>
+          </CardContent>
         </Collapse>
       </Card>
     );

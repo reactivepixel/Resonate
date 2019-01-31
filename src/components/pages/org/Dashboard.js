@@ -12,7 +12,7 @@ class Dashboard extends Component {
   render() {
     const { classes } = this.props;
 
-    const mockAuthedOrg = {id: 1};
+    const mockAuthedOrg = {id: 2};
     
     return (
         <Query query={getOrgById(mockAuthedOrg.id)} notifyOnNetworkStatusChange>
@@ -24,7 +24,7 @@ class Dashboard extends Component {
                 return (
                     <div className={classes.root}>
                         <CssBaseline />
-                        <CollapsingNavBar title={this.props.title} />
+                        <CollapsingNavBar title={data.org.name} />
                         <main className={classes.content}>
                             {/* Spacer for navBar */}
                             <div className={classes.toolbar} />
@@ -37,9 +37,11 @@ class Dashboard extends Component {
                                     Contractors
                             </Typography>
                             { data.org.contractors.map(contractor => (
-                                    <Typography variant="p" color="textPrimary" noWrap>
+                                <div key={contractor.id}>
+                                    <Typography variant="body1" color="textPrimary" noWrap>
                                         {contractor.fullName}
                                     </Typography>
+                                </div>
                                 ))}
                             {/* <ContractorList /> */}
                         </main>

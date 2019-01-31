@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 // import TextField from '@material-ui/core/TextField';
-import EventCondensed from '../../components/EventCondensed';
+import EventCondensed from '../../components/molecules/EventCondensed';
 import { getAllEvents } from '../../graphQL/queries.js';
 
 class EventList extends Component {

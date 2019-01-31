@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 // import TextField from '@material-ui/core/TextField';
-import EventCondensed from '../../components/EventCondensed';
+import EventCondensed from '../../components/molecules/EventCondensed';
 import { getEventsByOrgId } from '../../graphQL/queries.js';
 import { Query } from "react-apollo";
 
@@ -15,7 +15,7 @@ class EventList extends Component {
 
         return (
             <Query 
-                query={getEventsByOrgId(1)}
+                query={getEventsByOrgId(this.props.org.id)}
                 notifyOnNetworkStatusChange
             >
                 {({ loading, error, data, refetch, networkStatus}) => {
