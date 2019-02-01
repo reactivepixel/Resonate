@@ -20,7 +20,6 @@ class CollapsingNavBar extends Component {
         primaryMenuLinks: [
             { title: 'Dashboard', href: '/org/dashboard', icon:'mail' },
             { title: 'Events', href: '/events', icon:'mail' },
-            { title: 'Staff', href: '/staff', icon:'mail' },
             { title: 'Contractors', href: '/contractors', icon:'mail' }
           ],
     

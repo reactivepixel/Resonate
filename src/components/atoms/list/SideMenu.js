@@ -3,8 +3,10 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import { Link } from "react-router-dom";
+
+import MailIcon from '@material-ui/icons/Mail';
+import EventIcon from '@material-ui/icons/Event';
 
 class SideMenu extends Component {
 
@@ -15,7 +17,7 @@ class SideMenu extends Component {
                 
                     <Link key={listItem.title} to={listItem.href}>
                         <ListItem button>
-                            <ListItemIcon><MailIcon /></ListItemIcon>
+                            <ListItemIcon><EventIcon /></ListItemIcon>
                             <ListItemText primary={listItem.title} />
                         </ListItem>
                     </Link>
