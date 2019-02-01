@@ -13,7 +13,7 @@ export default {
     orgs: (parent, args, { db }, info) => db.Orgs.findAll(),
     contractors: (parent, args, { db }, info) => db.Contractors.findAll(),
     org: (parent, { id }, { db }, info) => db.Orgs.findByPk(id, {include: [{ all: true, nested: true }]}),
-    orgEvents: (parent, { orgId }, { db }, info) => db.Events.findAll({where: {orgId: orgId}, include: [{ all: true, nested: true }]}),
+    orgEvents: (parent, { orgId }, { db }, info) => db.Events.findAll({where: {orgId: orgId}, include: [{ all: true, nested: true }], order: [['startTime', 'ASC']]}),
     venueEvents: (parent, { venueId }, { db }, info) => db.Events.findAll({where: {venueId: venueId}, include: [{ all: true, nested: true }]}),
     venues: (parent, args, { db }, info) => db.Venues.findAll(),
     event: (parent, { id }, { db }, info) => db.Events.findByPk(id),

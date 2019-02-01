@@ -13,6 +13,7 @@ class EventList extends Component {
 
     render() {
 
+        
         return (
             <Query 
                 query={getEventsByOrgId(this.props.org.id)}
@@ -38,7 +39,7 @@ class EventList extends Component {
                                 
                                 { data.orgEvents.map(event => (
                                     <Grid key={event.id} item xs={12} sm={6} lg={4} xl={3}>
-                                        <EventCondensed event={event} />
+                                        <EventCondensed org={this.props.org} event={event} />
                                         {/* <EventConfirm event={event} /> */}
                                     </Grid>
                                 ))}

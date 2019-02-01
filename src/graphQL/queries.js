@@ -5,9 +5,12 @@ export const getAllEvents = gql`
         events {
             id
             title
+            startTime
             description
             venue {
                 name
+                city
+                state
             }
         }
     }`;
@@ -19,6 +22,7 @@ export const getOrgs = gql`
             name
             events {
                 title
+                startTime
             }
         }
     }`;
@@ -44,8 +48,11 @@ export const getEventsByOrgId = (orgId) => {
             id
             title
             description
+            startTime
             venue {
                 name
+                city
+                state
             }
         }
     }`;
@@ -57,6 +64,7 @@ export const getEventsByVenueId = (venueId) => {
         venueEvents (venueId: ${venueId}) {
             id
             title
+            startTime
             description
         }
     }`;

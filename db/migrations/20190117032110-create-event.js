@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       startTime: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE
       },
       expectedDuration: {
         type: Sequelize.STRING

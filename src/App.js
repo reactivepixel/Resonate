@@ -47,7 +47,12 @@ class App extends Component {
           <MuiThemeProvider theme={theme}>
             <Switch>
               <PropsRoute path="/" title="Events" exact component={Events} />
-              <PropsRoute path="/org/dashboard" title="[Company Name] Dashboard" component={Dashboard} />
+              {/* Org */}
+              <PropsRoute path="/org/:orgId/dashboard" component={Dashboard} />
+              {/* Contractors */}
+              <PropsRoute path="/org/:orgId/contractors/add" component={Dashboard} />
+              {/* Events */}
+              <PropsRoute path="/org/:orgId/events/add" component={Dashboard} />
             </Switch>
           </MuiThemeProvider>
         </ApolloProvider>

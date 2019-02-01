@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Events = sequelize.define('Events', {
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    startTime: DataTypes.STRING,
+    startTime: DataTypes.DATE,
     expectedDuration: DataTypes.STRING,
     venueId: DataTypes.INTEGER,
     orgId: DataTypes.INTEGER,

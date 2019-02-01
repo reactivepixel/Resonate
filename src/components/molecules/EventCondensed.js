@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
@@ -7,49 +7,28 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import Edit from '@material-ui/icons/Edit';
 import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Link } from "react-router-dom";
+
+
+import styles from '../../components/atoms/style/index';
+
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faInfo } from '@fortawesome/pro-solid-svg-icons'
 // import { faCheckSquare, faComments } from '@fortawesome/pro-regular-svg-icons'
 // import { faInfoCircle } from '@fortawesome/pro-light-svg-icons'
 
-const styles = theme => ({
-  card: {
-    maxWidth: 400,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  actions: {
-    display: 'flex',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-});
 
 class RecipeReviewCard extends Component {
-    state = { 
-        expanded: false,
-        value: 0,
-    };
+  state = { 
+      expanded: false,
+      value: 0,
+  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -65,11 +44,6 @@ class RecipeReviewCard extends Component {
     return (
       <Card className={classes.card}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              {this.props.event.title.charAt(0).toUpperCase()}{this.props.event.title.charAt(1).toLowerCase()}
-            </Avatar>
-          }
           action={
             <IconButton
             className={classnames(classes.expand, {
@@ -83,19 +57,29 @@ class RecipeReviewCard extends Component {
           </IconButton>
           }
           title={this.props.event.title}
-          subheader="September 14, 2016"
+          subheader={DateTime.fromMillis(parseInt(this.props.event.startTime)).toLocaleString(DateTime.DATETIME_FULL)}
         />
         
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography component="p">
-              {this.props.event.description}
-            </Typography>
-          </CardContent>
-          <CardContent>
-            <Button variant="contained" color="secondary" className={classes.button}>
-              Cancel Event
-            </Button>
+              <Typography component="h5">
+              {this.props.event.venue.name}
+              </Typography>
+              <Typography component="h6">
+                {this.props.event.venue.city}, {this.props.event.venue.state}
+              </Typography>
+            </CardContent>
+            <CardContent>
+              <Typography component="p">
+                {this.props.event.description}
+              </Typography>
+            </CardContent>
+            <CardContent>
+            <Link to={`/org/${this.props.org.id}/events/${this.props.event.id}/edit`}>
+              <Fab color="secondary" aria-label="Edit" className={classes.fab}>
+                <Edit />
+              </Fab>
+            </Link>
           </CardContent>
         </Collapse>
       </Card>

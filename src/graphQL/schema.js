@@ -5,11 +5,19 @@ export default `
     description: String
     venueId: ID!
     orgId: ID!
+    startTime: String!
     venue: Venue!
   }
   type Venue {
     id: ID!
     name: String!
+    address1: String!
+    address2: String!
+    zip: String!
+    city: String!
+    state: String!
+    mapURL: String!
+    timezoneTitle: String!
     events: [Event!]!
   }
   type Org {

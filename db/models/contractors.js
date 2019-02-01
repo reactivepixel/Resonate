@@ -19,6 +19,13 @@ module.exports = (sequelize, DataTypes) => {
   Contractors.associate = function(models) {
     // Contractors.belongsTo(models.Orgs, {
     //   as: 'org',
+    //   foreignKey: 'id',
+    //   otherKey: 'orgId',
+    //   through: 'OrgContractors'
+    // });
+
+    // Orgs.belongsToMany(models.Contractors, {
+    //   as: 'contractors',
     //   foreignKey: 'orgId',
     //   otherKey: 'contractorId',
     //   through: 'OrgContractors'

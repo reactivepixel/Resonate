@@ -58,6 +58,27 @@ Create a `.env` file on the root level of the repo and configure that file with 
 npm run
 ```
 
+# Routes
+
+## Org
+
+| Route | Path | Component |
+|:----|----|----:|
+| Dashboard | `/org/:orgId/dashboard`| `Dashboard`|
+
+## Events
+
+| Route | Path | Component |
+|:----|----|----:|
+| Event: Add | `/org/:orgId/events/add`| `xx`|
+| Event: Edit | `/org/:orgId/events/:eventId/edit`| `xx`|
+
+
+## Contractors
+| Route | Path | Component |
+|:----|----|----:|
+| Contractor: Add | `/org/:orgId/contractors/add`| `xx`|
+| Contractor: Edit | `/org/:orgId/contractors/:contractorId/edit`| `xx`|
 
 # Feature Groups
 
