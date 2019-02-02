@@ -9,7 +9,7 @@ module.exports = {
 
     for(let i = 0; i < totalToGen; i++){
       mockData.push({ 
-        title: faker.name.findName(), 
+        title: faker.company.companyName(), 
         description: faker.random.words(10), 
         startTime: DateTime.local().plus({
           months: faker.random.number({

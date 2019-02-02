@@ -11,7 +11,6 @@ import { getOrgById } from '../../../graphQL/queries';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 
-
 class Dashboard extends Component {
   render() {
     const { classes, match: { params } } = this.props;
