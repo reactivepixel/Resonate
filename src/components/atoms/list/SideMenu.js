@@ -5,7 +5,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from "react-router-dom";
 
-import MailIcon from '@material-ui/icons/Mail';
 import EventIcon from '@material-ui/icons/Event';
 
 class SideMenu extends Component {
