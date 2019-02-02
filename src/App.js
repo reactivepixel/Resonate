@@ -76,16 +76,16 @@ class App extends Component {
     }    
 
     return (
-      <ApolloProvider client={client}>
-        <MuiThemeProvider theme={theme}>
-          <Query query={getOrgById(this.state.org.id)} notifyOnNetworkStatusChange>
-            {({ loading, error, data, refetch, networkStatus}) => {
-              if (networkStatus === 4) return <p>Refetching!</p>
-              if (loading) return null;
-              if (error) return <p>Error =( 
-                  <button onClick={() => refetch()}>Refetch Data!</button></p>
-              return (
-                <div className={classes.root}>
+      <div className={classes.root}>
+        <ApolloProvider client={client}>
+          <MuiThemeProvider theme={theme}>
+            <Query query={getOrgById(this.state.org.id)} notifyOnNetworkStatusChange>
+              {({ loading, error, data, refetch, networkStatus}) => {
+                if (networkStatus === 4) return <p>Refetching!</p>
+                if (loading) return null;
+                if (error) return <p>Error =( 
+                    <button onClick={() => refetch()}>Refetch Data!</button></p>
+                return (
                   <Router>
                     <div>
                       <CssBaseline />
@@ -121,12 +121,12 @@ class App extends Component {
                       </main>
                     </div>
                   </Router>
-                </div>
-              )
-            }}
-          </Query>
-        </MuiThemeProvider>
-      </ApolloProvider>
+                )
+              }}
+            </Query>
+          </MuiThemeProvider>
+        </ApolloProvider>
+      </div>
     );
   }
 }
