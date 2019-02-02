@@ -76,7 +76,7 @@ class App extends Component {
     }    
 
     return (
-      <div className={classes.root}>
+      <div>
         <ApolloProvider client={client}>
           <MuiThemeProvider theme={theme}>
             <Query query={getOrgById(this.state.org.id)} notifyOnNetworkStatusChange>
@@ -87,7 +87,7 @@ class App extends Component {
                     <button onClick={() => refetch()}>Refetch Data!</button></p>
                 return (
                   <Router>
-                    <div>
+                    <div className={classes.root}>
                       <CssBaseline />
                       <CollapsingNavBar org={data.org} />
                       <main className={classes.content}>
