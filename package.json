@@ -33,7 +33,8 @@
     "db-clean-local": "./db/scripts/migrate_local.sh",
     "migrate-local-clean": "./db/scripts/migrate_local.sh",
     "server-build": "webpack --entry ./public/js/index.js --output-filename bundle.min.js --output-path ./public/js ",
-    "server-start": "nodemon --exec babel-node ./src/server.js"
+    "server-start": "nodemon --exec babel-node ./src/server.js",
+    "start": "node --exec babel-node ./src/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
