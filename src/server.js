@@ -6,9 +6,9 @@ import resolvers from "./graphQL/resolvers";
 import db from "../db/models";
 
 // DB Manual Testing String
-// db.Events.findAll({where: {}, include: [{ all: true, nested: true }]}).then(data => {
-//   data.map( event => {
-//     console.log('----', `(${event.id})`, event.venueId, event.venue.id, event.venue.events.length);
+// db.Contractors.findAll({where: {id: 1}, include: [{ all: true, nested: true }]}).then(data => {
+//   data.map( contractor => {
+//     console.log('----', `(${contractor.id})`, contractor.fullName, contractor.orgContractors.length);
     
 //   })
 // })

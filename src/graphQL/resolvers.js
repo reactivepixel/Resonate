@@ -20,7 +20,7 @@ export default {
     venue: (parent, { id }, { db }, info) => db.Venues.findByPk(id) 
   },
   Mutation: {
-    createContractor: (parent, { fName, lName, countryCode, phone, email, address1, address2, zip, city, state, contactPrefId, smsConsent, emailConsent, currentTimeZone }, { db }, info) =>
+    createContractor: (parent, { orgId, fName, lName, countryCode, phone, email, address1, address2, zip, city, state, contactPrefId, smsConsent, emailConsent, currentTimeZone }, { db }, info) =>
       db.Contractors.create({
         fullName: `${fName} ${lName}`,
         fName: fName,
@@ -37,6 +37,14 @@ export default {
         smsConsent: smsConsent,
         emailConsent: emailConsent,
         currentTimeZone: currentTimeZone,
+        orgContractors: [
+          { orgId: orgId }
+        ]
+      }, {
+        include: [ {
+          model: db.OrgContractors,
+          as: 'orgContractors'
+        } ]
       }),
 
     createEvent: (parent, { title, description, venueId }, { db }, info) =>

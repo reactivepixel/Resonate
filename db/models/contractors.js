@@ -16,20 +16,18 @@ module.exports = (sequelize, DataTypes) => {
     emailConsent: DataTypes.BOOLEAN,
     currentTimeZone: DataTypes.STRING
   }, {});
-  Contractors.associate = function(models) {
-    // Contractors.belongsTo(models.Orgs, {
-    //   as: 'org',
-    //   foreignKey: 'id',
-    //   otherKey: 'orgId',
-    //   through: 'OrgContractors'
-    // });
+  Contractors.associate = models => {
+    Contractors.hasMany(models.OrgContractors, {
+      as: 'orgContractors',
+      foreignKey: 'contractorId'
+    });
 
-    // Orgs.belongsToMany(models.Contractors, {
-    //   as: 'contractors',
-    //   foreignKey: 'orgId',
-    //   otherKey: 'contractorId',
-    //   through: 'OrgContractors'
-    // })
+    Contractors.belongsToMany(models.Orgs, {
+      as: 'orgs',
+      foreignKey: 'contractorId',
+      otherKey: 'orgId',
+      through: 'OrgContractors'
+    })
   };
   return Contractors;
 };
