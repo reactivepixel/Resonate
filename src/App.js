@@ -2,7 +2,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { withStyles } from '@material-ui/core/styles';
 import styles from './components/atoms/style/index';
@@ -97,23 +97,23 @@ class App extends Component {
                           <Switch>              
                             {/* Org */}
                             <PropsRoute path="/org/:orgId/dashboard" org={data.org} component={OrgDashboard} />
-                            <PropsRoute path="/org/:orgId/add" component={FormAdd} />
+                            <PropsRoute path="/org/add" component={FormAdd} />
                             <PropsRoute path="/org/:orgId/edit" component={FormEdit} />
                             <PropsRoute path="/org/:orgId/delete" component={DialogConfirmation} />
                             
                             {/* Events */}
                             <PropsRoute path="/org/:orgId/events/" component={OrgEvents} />
                             <PropsRoute path="/org/:orgId/events/:eventId" component={OrgEventDetail} />
-                            <PropsRoute path="/org/:orgId/events/:eventId/add" component={FormAdd} />
+                            <PropsRoute path="/org/:orgId/events/add" component={FormAdd} />
                             <PropsRoute path="/org/:orgId/events/:eventId/edit" component={FormEdit} />
                             <PropsRoute path="/org/:orgId/events/:eventId/delete" component={DialogConfirmation} />
                             
                             {/* Contractors */}
-                            <PropsRoute path="/org/:orgId/contractors/" component={OrgContractors} />
+                            <PropsRoute path="/org/:orgId/contractors/add" org={data.org} component={FormAdd} />
+                            <PropsRoute path="/org/:orgId/contractors" component={OrgContractors} />
                             <PropsRoute path="/org/:orgId/contractors/:contractorsId" component={OrgContractorDetail} />
                             <PropsRoute path="/org/:orgId/contractors/:contractorsId/dashboard" component={OrgContractorDashboard} />
                             <PropsRoute path="/org/:orgId/contractors/:contractorsId/messages" component={OrgContractorMessages} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId/add" component={FormAdd} />
                             <PropsRoute path="/org/:orgId/contractors/:contractorsId/edit" component={FormEdit} />
                             <PropsRoute path="/org/:orgId/contractors/:contractorsId/delete" component={DialogConfirmation} />
                             

@@ -14,7 +14,7 @@ class Dashboard extends Component {
             <div>
                 <Typography variant="h6" color="textSecondary" noWrap>
                     Upcoming Events
-                    <Link to={`/org/${this.props.org.id}/events/add`} >
+                    <Link className={classes.stdLink} to={`/org/${this.props.org.id}/events/add`} >
                         <Button color="primary" className={classes.button}>
                             Add
                         </Button>
@@ -24,7 +24,7 @@ class Dashboard extends Component {
 
                 <Typography variant="h6" color="textSecondary" noWrap>
                     Contractors
-                    <Link to={`/org/${this.props.org.id}/contractors/add`}>
+                    <Link className={classes.stdLink} to={`/org/${this.props.org.id}/contractors/add`}>
                         <Button color="primary" className={classes.button}>
                             Add
                         </Button>

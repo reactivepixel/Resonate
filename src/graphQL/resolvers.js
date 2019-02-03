@@ -20,12 +20,31 @@ export default {
     venue: (parent, { id }, { db }, info) => db.Venues.findByPk(id) 
   },
   Mutation: {
-    createEvent: (parent, { title, description, venueId }, { db }, info) =>
-      db.Events.create({
-        title: title,
-        description: description,
-        venueId: venueId
+    createContractor: (parent, { fName, lName, countryCode, phone, email, address1, address2, zip, city, state, contactPrefId, smsConsent, emailConsent, currentTimeZone }, { db }, info) =>
+      db.Contractors.create({
+        fullName: `${fName} ${lName}`,
+        fName: fName,
+        lName: lName,
+        countryCode: countryCode,
+        phone: phone,
+        email: email,
+        address1: address1,
+        address2: address2,
+        zip: zip,
+        city: city,
+        state: state,
+        contactPrefId: contactPrefId,
+        smsConsent: smsConsent,
+        emailConsent: emailConsent,
+        currentTimeZone: currentTimeZone,
       }),
+
+    createEvent: (parent, { title, description, venueId }, { db }, info) =>
+    db.Events.create({
+      title: title,
+      description: description,
+      venueId: venueId
+    }),
     updateEvent: (parent, { title, description, venueId, id }, { db }, info) =>
       db.Events.update({
         title: title,
