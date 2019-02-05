@@ -47,8 +47,7 @@ Create a `.env` file on the root level of the repo and configure that file with 
     "NODE_ENV": "development",
     "REACT_APP_PROTOCOL": "http",
     "REACT_APP_CLIENT_HOST": "localhost",
-    "REACT_APP_DB_PORT": 3000,
-    "CLIENT_PORT": 3100
+    "PORT": 3000,
 }
 ```
 

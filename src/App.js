@@ -43,7 +43,7 @@ if (process.env.REACT_APP_PROTOCOL === undefined) {
 const client = new ApolloClient({
   uri: `${process.env.REACT_APP_PROTOCOL}://${
     process.env.REACT_APP_CLIENT_HOST
-  }:${process.env.REACT_APP_DB_PORT}/graphql`
+  }:${process.env.PORT}/graphql`
 });
 
 class App extends Component {
