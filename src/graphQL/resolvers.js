@@ -12,7 +12,13 @@ export default {
     events: (parent, args, { db }, info) => db.Events.findAll(),
     orgs: (parent, args, { db }, info) => db.Orgs.findAll(),
     contractors: (parent, args, { db }, info) => db.Contractors.findAll(),
-    org: (parent, { id }, { db }, info) => db.Orgs.findByPk(id, {include: [{ all: true, nested: true }]}),
+    org: (parent, { id }, { db }, info) => db.Orgs.findByPk(id, {include: [
+      // { all: true, nested: true }
+      {
+        model: db.Contractors,
+        as: 'contractors'
+      }, 
+    ]}),
     orgEvents: (parent, { orgId }, { db }, info) => db.Events.findAll({where: {orgId: orgId}, include: [{ all: true, nested: true }], order: [['startTime', 'ASC']]}),
     venueEvents: (parent, { venueId }, { db }, info) => db.Events.findAll({where: {venueId: venueId}, include: [{ all: true, nested: true }]}),
     venues: (parent, args, { db }, info) => db.Venues.findAll(),
@@ -45,6 +51,28 @@ export default {
           model: db.OrgContractors,
           as: 'orgContractors'
         } ]
+      }),
+
+    updateContractor: (parent, { id, fName, lName, countryCode, phone, email, address1, address2, zip, city, state, contactPrefId, smsConsent, emailConsent, currentTimeZone }, { db }, info) =>
+      db.Contractors.update({
+        fullName: `${fName} ${lName}`,
+        fName: fName,
+        lName: lName,
+        countryCode: countryCode,
+        phone: phone,
+        email: email,
+        address1: address1,
+        address2: address2,
+        zip: zip,
+        city: city,
+        state: state,
+        contactPrefId: contactPrefId,
+        smsConsent: smsConsent,
+        emailConsent: emailConsent,
+        currentTimeZone: currentTimeZone,
+        
+      }, {
+        where: {id: id},
       }),
 
     createEvent: (parent, { title, description, venueId }, { db }, info) =>

@@ -2,7 +2,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import { withStyles } from '@material-ui/core/styles';
 import styles from './components/atoms/style/index';
@@ -15,8 +15,12 @@ import "./App.css";
 // Dialogs
 import DialogConfirmation from "./components/pages/dialog/DialogConfirmation";
 // Forms
-import FormAdd from "./components/pages/form/FormAdd";
-import FormEdit from "./components/pages/form/FormEdit";
+import FormAddContractor from "./components/pages/form/FormAddContractor";
+import FormAddOrgs from "./components/pages/form/FormAddOrgs";
+import FormAddEvent from "./components/pages/form/FormAddEvent";
+import FormEditEvent from "./components/pages/form/FormEditEvent";
+import FormEditOrg from "./components/pages/form/FormEditOrg";
+import FormEditContractor from "./components/pages/form/FormEditContractor";
 // Orgs
 import OrgContractorDashboard from "./components/pages/org/OrgContractorDashboard";
 import OrgContractorDetail from "./components/pages/org/OrgContractorDetail";
@@ -51,15 +55,14 @@ class App extends Component {
     org: {}
   }
   componentDidMount() {
-    this.setState({org: {id: 1}})
+    this.setState({
+      org: {id: 1}
+    })
   }
-  
 
   render() {
     const { classes } = this.props;
     
-
-
     const renderMergedProps = (component, ...rest) => {
       const finalProps = Object.assign({}, ...rest);
       return (
@@ -94,28 +97,29 @@ class App extends Component {
                           {/* Spacer for navBar */}
                           <div className={classes.toolbar} />
                                                 
-                          <Switch>              
+                          <Switch>
+                            <Redirect exact from='/' to='/org/1/dashboard'/>         
                             {/* Org */}
                             <PropsRoute path="/org/:orgId/dashboard" org={data.org} component={OrgDashboard} />
-                            <PropsRoute path="/org/add" component={FormAdd} />
-                            <PropsRoute path="/org/:orgId/edit" component={FormEdit} />
-                            <PropsRoute path="/org/:orgId/delete" component={DialogConfirmation} />
+                            <PropsRoute path="/org/add" org={data.org} component={FormAddOrgs} />
+                            <PropsRoute path="/org/:orgId/edit" org={data.org} component={FormEditOrg} />
+                            <PropsRoute path="/org/:orgId/delete" org={data.org} component={DialogConfirmation} />
                             
                             {/* Events */}
-                            <PropsRoute path="/org/:orgId/events/" component={OrgEvents} />
-                            <PropsRoute path="/org/:orgId/events/:eventId" component={OrgEventDetail} />
-                            <PropsRoute path="/org/:orgId/events/add" component={FormAdd} />
-                            <PropsRoute path="/org/:orgId/events/:eventId/edit" component={FormEdit} />
-                            <PropsRoute path="/org/:orgId/events/:eventId/delete" component={DialogConfirmation} />
+                            <PropsRoute path="/org/:orgId/events/add" org={data.org} component={FormAddEvent} />
+                            <PropsRoute path="/org/:orgId/events/:eventId/edit" org={data.org} component={FormEditEvent} />
+                            <PropsRoute path="/org/:orgId/events/" org={data.org} component={OrgEvents} />
+                            <PropsRoute path="/org/:orgId/events/:eventId" org={data.org} component={OrgEventDetail} />
+                            <PropsRoute path="/org/:orgId/events/:eventId/delete" org={data.org} component={DialogConfirmation} />
                             
                             {/* Contractors */}
-                            <PropsRoute path="/org/:orgId/contractors/add" org={data.org} component={FormAdd} />
-                            <PropsRoute path="/org/:orgId/contractors" component={OrgContractors} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId" component={OrgContractorDetail} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId/dashboard" component={OrgContractorDashboard} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId/messages" component={OrgContractorMessages} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId/edit" component={FormEdit} />
-                            <PropsRoute path="/org/:orgId/contractors/:contractorsId/delete" component={DialogConfirmation} />
+                            <PropsRoute path="/org/:orgId/contractors/add" org={data.org} component={FormAddContractor} />
+                            <PropsRoute path="/org/:orgId/contractors/:contractorId/edit" org={data.org} component={FormEditContractor} />
+                            <PropsRoute path="/org/:orgId/contractors" org={data.org} component={OrgContractors} />
+                            <PropsRoute path="/org/:orgId/contractors/:contractorId" org={data.org} component={OrgContractorDetail} />
+                            <PropsRoute path="/org/:orgId/contractors/:contractorId/dashboard" org={data.org} component={OrgContractorDashboard} />
+                            <PropsRoute path="/org/:orgId/contractors/:contractorId/messages" org={data.org} component={OrgContractorMessages} />
+                            <PropsRoute path="/org/:orgId/contractors/:contractorId/delete" org={data.org} component={DialogConfirmation} />
                             
                           </Switch>
                       </main>

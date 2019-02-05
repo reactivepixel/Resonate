@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { withStyles } from '@material-ui/core/styles';
 import styles from '../../../components/atoms/style/index';
 import TextField from '@material-ui/core/TextField';
-// import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
 
-class FormAdd extends Component {
+class FormAddContractor extends Component {
   state = {
     title: 'Add Contractor',
     description: 'Contractors can be attached to events and messaged directly or through SMS messages through the platform.',
@@ -108,7 +108,11 @@ class FormAdd extends Component {
             {this.state.description}
           </Typography>
           
-          <form className={classes.container} noValidate autoComplete="off">
+          <form 
+            className={classes.container} 
+            noValidate 
+            autoComplete="off"
+          >
             
           {this.state.formData.map((formItem, index) => (
             <TextField
@@ -124,13 +128,17 @@ class FormAdd extends Component {
               disabled={formItem.disabled}
             />
           ))}
-            <Button variant="contained" color="secondary" className={classes.button}>
-              {this.state.confirmAction.label}
-            </Button>
+            <div>
+              <Link className={classes.stdLink} to="/">
+                <Button variant="contained" color="secondary" className={classes.button}>
+                  {this.state.confirmAction.label}
+                </Button>
+              </Link>
+            </div>
           </form>
-        </div>
+      </div>
     );
   }
 }
 
-export default withStyles(styles, { withTheme: true })(FormAdd);
+export default withStyles(styles, { withTheme: true })(FormAddContractor);

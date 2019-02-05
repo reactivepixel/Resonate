@@ -58,6 +58,7 @@ export default `
   }
   type Mutation {
     createContractor(orgId: Int!, fullName: String, fName: String, lName: String, countryCode: Int, phone: String, email: String, address1: String, address2: String, zip: String, city: String, state: String, contactPrefId: Int, smsConsent: Int, emailConsent: Int, currentTimeZone: String): Contractor!
+    updateContractor(id: Int!, fullName: String, fName: String, lName: String, countryCode: Int, phone: String, email: String, address1: String, address2: String, zip: String, city: String, state: String, contactPrefId: Int, smsConsent: Int, emailConsent: Int, currentTimeZone: String): Contractor!
     createEvent(title: String, description:String!, venueId: ID!): Event!
     updateEvent(id: ID!, title: String, description:String!, venueId: ID!): [Int!]!
     deleteEvent(id: ID!): Int!
