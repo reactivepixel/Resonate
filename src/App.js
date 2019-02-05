@@ -41,9 +41,7 @@ if (process.env.REACT_APP_PROTOCOL === undefined) {
 }
 
 const client = new ApolloClient({
-  uri: `${process.env.REACT_APP_PROTOCOL}://${
-    process.env.REACT_APP_CLIENT_HOST
-  }:${process.env.PORT}/graphql`
+  uri: `https://resonate-live.herokuapp.com/graphql`
 });
 
 class App extends Component {
