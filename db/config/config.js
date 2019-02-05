@@ -26,7 +26,7 @@ module.exports = {
       underscored: true
     },
   },
-  live: {
+  production: {
     database: process.env.DB_LIVE_DATABASE,
     username: process.env.DB_LIVE_USER,
     password: process.env.DB_LIVE_PASSWORD,
