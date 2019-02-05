@@ -38,7 +38,7 @@ app.use(express.static("build"));
 
 // Home route to allow for Client-side routing
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'app', 'src', 'build', 'gql-index.html'));
+  res.sendFile(path.join(__dirname, '../', '../', 'build', 'gql-index.html'));
 });
 
 // Verify that Sequelize models are configured as expected
