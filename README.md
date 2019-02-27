@@ -39,7 +39,7 @@ Create a `.env` file on the root level of the repo and configure that file with 
     "TWILIO_AUTH_TOKEN": "",
     "TWILIO_FROM_NUMBER": "",
     "TWILIO_OWNER_NUMBER": "",
-    "DB_LOCAL_DATABASE": "resonate-dev",
+    "DB_LOCAL_DATABASE": "resonate-dev-2",
     "DB_LOCAL_USER": "",
     "DB_LOCAL_PASSWORD": "",
     "DB_LOCAL_HOST": "localhost",
@@ -47,15 +47,15 @@ Create a `.env` file on the root level of the repo and configure that file with 
     "NODE_ENV": "development",
     "REACT_APP_PROTOCOL": "http",
     "REACT_APP_CLIENT_HOST": "localhost",
-    "REACT_APP_DB_PORT": 3000,
-    "CLIENT_PORT": 3100
+    "PORT": 3000,
 }
 ```
 
-## Run
+## Run Dev
 
 ```
-npm run
+npm run db-clean-local
+npm run dev
 ```
 
 # Routes
@@ -64,21 +64,33 @@ npm run
 
 | Route | Path | Component |
 |:----|----|----:|
-| Dashboard | `/org/:orgId/dashboard`| `Dashboard`|
+| Org: Dashboard | `/org/:orgId/dashboard`| `/Org/Dashboard`|
+| Org: Add| `/org/:orgId/add`| `/Form/Add`|
+| Org: Edit | `/org/:orgId/edit`| `/Form/Edit`|
+| Org: Delete | `/org/:orgId/delete`| `/Dialog/Confirmation`|
+
 
 ## Events
 
 | Route | Path | Component |
 |:----|----|----:|
-| Event: Add | `/org/:orgId/events/add`| `xx`|
-| Event: Edit | `/org/:orgId/events/:eventId/edit`| `xx`|
+| Event: Detail | `/org/:orgId/events`| `Events`|
+| Event: Detail | `/org/:orgId/events/:eventId/`| `/Event/Detail`|
+| Event: Add | `/org/:orgId/events/add`| `/Form/Add`|
+| Event: Edit | `/org/:orgId/events/:eventId/edit`| `/Form/Edit`|
+| Event: Delete | `/org/:orgId/events/:eventId/delete`| `/Dialog/Confirmation`|
 
 
 ## Contractors
 | Route | Path | Component |
 |:----|----|----:|
-| Contractor: Add | `/org/:orgId/contractors/add`| `xx`|
-| Contractor: Edit | `/org/:orgId/contractors/:contractorId/edit`| `xx`|
+| Contractor: Detail | `/org/:orgId/contractors`| `Contractors`|
+| Contractor: Detail | `/org/:orgId/contractors/:contractorId`| `/Form/Add`|
+| Contractor: Dashboard | `/org/:orgId/contractors/:contractorId/dashboard`| `/Contractor/Dashboard`|
+| Contractor: Messaging | `/org/:orgId/contractors/:contractorId/messages`| `/Contractor/Messages`|
+| Contractor: Add | `/org/:orgId/contractors/add`| `/Form/Add`|
+| Contractor: Edit | `/org/:orgId/contractors/:contractorId/edit`| `/Form/Edit`|
+| Contractor: Delete | `/org/:orgId/contractors/:contractorId/edit`| `/Dialog/Confirm`|
 
 # Feature Groups
 

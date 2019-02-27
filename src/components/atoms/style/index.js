@@ -1,4 +1,5 @@
 import red from '@material-ui/core/colors/red';
+// import { NEG_ONE } from 'long';
 
 const drawerWidth = 240;
 
@@ -71,6 +72,25 @@ const styles = theme => ({
 
     input: {
       display: 'none',
+    },
+
+    stdLink: {
+      textDecoration: 'none',
+    },
+
+    inputContainer: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+    },
+    dense: {
+      marginTop: 16,
+    },
+    menu: {
+      width: 200,
     },
 
   });

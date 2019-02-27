@@ -52,7 +52,7 @@ class ContractorsList extends Component {
           />
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Link to={`/org/${this.props.org.id}/contractors/${this.props.contractor.id}/message`}>
+              <Link className={classes.stdLink} to={`/org/${this.props.org.id}/contractors/${this.props.contractor.id}/message`}>
                 <Button variant="outlined" 
                 color="primary" className={classes.button}>
                   Message
@@ -61,9 +61,11 @@ class ContractorsList extends Component {
             </CardContent>
 
             <CardContent>
-              <Fab color="secondary" aria-label="Edit" className={classes.fab}>
-                <Edit />
-              </Fab>
+              <Link className={classes.stdLink} to={`/org/${this.props.org.id}/contractors/${this.props.contractor.id}/edit`}>
+                <Fab color="secondary" aria-label="Edit" className={classes.fab}>
+                  <Edit />
+                </Fab>
+              </Link>
             </CardContent>
           </Collapse>
         </Card>

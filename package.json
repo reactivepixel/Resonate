@@ -2,6 +2,10 @@
   "name": "react-resonate",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "v10.15.0",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "@material-ui/core": "^3.8.3",
     "@material-ui/icons": "^3.0.2",
@@ -22,7 +26,10 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
     "react-swipeable-views": "^0.13.0",
-    "sequelize": "^4.42.0"
+    "sequelize": "^4.42.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1"
   },
   "scripts": {
     "client-start": "react-scripts start",
@@ -31,6 +38,7 @@
     "client-eject": "react-scripts eject",
     "dev": "nf start -j Procfile.dev",
     "db-clean-local": "./db/scripts/migrate_local.sh",
+    "db-clean-live": "./db/scripts/migrate_live.sh",
     "migrate-local-clean": "./db/scripts/migrate_local.sh",
     "server-build": "webpack --entry ./public/js/index.js --output-filename bundle.min.js --output-path ./public/js ",
     "server-start": "nodemon --exec babel-node ./src/server.js"
@@ -45,9 +53,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-3": "^6.24.1",
     "dotenv-json": "^1.0.0",
     "faker": "^4.1.0",
     "nodemon": "^1.18.9",
