@@ -39,7 +39,7 @@ Create a `.env` file on the root level of the repo and configure that file with 
     "TWILIO_AUTH_TOKEN": "",
     "TWILIO_FROM_NUMBER": "",
     "TWILIO_OWNER_NUMBER": "",
-    "DB_LOCAL_DATABASE": "resonate-dev",
+    "DB_LOCAL_DATABASE": "resonate-dev-2",
     "DB_LOCAL_USER": "",
     "DB_LOCAL_PASSWORD": "",
     "DB_LOCAL_HOST": "localhost",
