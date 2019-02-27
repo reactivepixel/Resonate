@@ -33,9 +33,33 @@ export const getOrgById = (orgId) => {
         org (id: ${orgId}) {
             id
             name
+            events {
+                id
+                title
+                startTime
+                description
+                venue {
+                    name
+                    city
+                    state
+                }
+            }
             contractors {
                 id
                 fullName
+                fName
+                lName
+                countryCode
+                phone
+                email
+                address1
+                address2
+                zip
+                city
+                state
+                contactPrefId
+                smsConsent
+                currentTimeZone
             }
         }
     }`;
@@ -75,5 +99,18 @@ export const getContractors = gql`
     contractors {
         id
         fullName
+        fName
+        lName
+        countryCode
+        phone
+        email
+        address1
+        address2
+        zip
+        city
+        state
+        contactPrefId
+        smsConsent
+        currentTimeZone
     }
 }`;

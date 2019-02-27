@@ -6,9 +6,9 @@ import resolvers from "./graphQL/resolvers";
 import db from "../db/models";
 
 // DB Manual Testing String
-// db.Events.findAll({where: {}, include: [{ all: true, nested: true }]}).then(data => {
-//   data.map( event => {
-//     console.log('----', `(${event.id})`, event.venueId, event.venue.id, event.venue.events.length);
+// db.Contractors.findAll({where: {id: 1}, include: [{ all: true, nested: true }]}).then(data => {
+//   data.map( contractor => {
+//     console.log('----', `(${contractor.id})`, contractor.fullName, contractor.orgContractors.length);
     
 //   })
 // })
@@ -16,7 +16,7 @@ import db from "../db/models";
 
 import morgan from "morgan";
 
-const port = process.env.REACT_APP_DB_PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const server = new ApolloServer({
   typeDefs: gql(typeDefs),
@@ -38,7 +38,7 @@ app.use(express.static("build"));
 
 // Home route to allow for Client-side routing
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../', 'build', 'gql-index.html'));
+  res.sendFile(path.join(__dirname, '../', '../', 'build', 'gql-index.html'));
 });
 
 // Verify that Sequelize models are configured as expected
